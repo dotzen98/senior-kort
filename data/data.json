@@ -1,0 +1,1040 @@
+[
+  {
+    "name": "Aktivitetceter Bispebjerg",
+    "lat": 55.708361832849036,
+    "lng": 12.531894128372336,
+    "totalFunding": 9893.28,
+    "funding": {
+      "Danmark Spiser Sammen 2025": 9893.28
+    }
+  },
+  {
+    "name": "Aktivitetscenter Midtpunktet",
+    "lat": 55.691229267308294,
+    "lng": 12.566693055358334,
+    "totalFunding": 65000.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 65000.0
+    }
+  },
+  {
+    "name": "Aktivitetscenter Langgadehus",
+    "lat": 55.66608204648299,
+    "lng": 12.507531440015079,
+    "totalFunding": 7804.08,
+    "funding": {
+      "Danmark Spiser Sammen 2025": 7804.08
+    }
+  },
+  {
+    "name": "Aktivitetscenter Sløjfen",
+    "lat": 55.66127434449142,
+    "lng": 12.616253568850324,
+    "totalFunding": 5288711.51,
+    "funding": {
+      "Seniorklubber 2024": 1630000.0,
+      "Seniorklubber 2025": 1790000.0,
+      "Seniorklubber 2026": 1800000.0,
+      "Seniordagen 2025": 19900.0,
+      "Ældre-fællesskaber 2025": 40000.0,
+      "Danmark Spiser Sammen 2025": 8811.51
+    }
+  },
+  {
+    "name": "Aktive Ældre på Nørrebro",
+    "lat": 55.70277596651487,
+    "lng": 12.54261341487865,
+    "totalFunding": 1306500.0,
+    "funding": {
+      "Seniorklubber 2024": 490000.0,
+      "Seniorklubber 2025": 400000.0,
+      "Seniorklubber 2026": 400000.0,
+      "Seniordagen 2025": 16500.0
+    }
+  },
+  {
+    "name": "Amager Seniorklub",
+    "lat": 55.64867648889503,
+    "lng": 12.60814062709242,
+    "totalFunding": 4426000.0,
+    "funding": {
+      "Seniorklubber 2024": 1320000.0,
+      "Seniorklubber 2025": 1520000.0,
+      "Seniorklubber 2026": 1520000.0,
+      "Seniordagen 2025": 16000.0,
+      "Danmark Spiser Sammen 2025": 10000.0,
+      "Minoritetsetniske Seniorer 2025": 40000.0
+    }
+  },
+  {
+    "name": "Beboerrepræsentationen i Øster-Fælledgaard",
+    "lat": 55.700430085998654,
+    "lng": 12.578848694222325,
+    "totalFunding": 70000.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 70000.0
+    }
+  },
+  {
+    "name": "Bispeparken Pensionistklub",
+    "lat": 55.71251918627919,
+    "lng": 12.53241769768837,
+    "totalFunding": 305550.0,
+    "funding": {
+      "Seniorklubber 2024": 20000.0,
+      "Seniorklubber 2025": 40000.0,
+      "Seniorklubber 2026": 80000.0,
+      "Seniordagen 2025": 5000.0,
+      "Ældre-fællesskaber 2025": 69800.0,
+      "Puljen til Ældrefællesskaber 2026": 90750.0
+    }
+  },
+  {
+    "name": "BK Skjold",
+    "lat": 55.703648154385796,
+    "lng": 12.574775040016865,
+    "totalFunding": 376389.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 79000.0,
+      "Civilsamfunds-puljen 2025": 141639.0,
+      "Civilsamfunds-puljen 2026": 105500.0,
+      "Civilsamfunds-puljen 2027": 50250.0
+    }
+  },
+  {
+    "name": "Blossom",
+    "lat": 55.70639629721453,
+    "lng": 12.535494936731624,
+    "totalFunding": 623388.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 199870.0,
+      "Civilsamfunds-puljen 2025": 268433.0,
+      "Civilsamfunds-puljen 2026": 155085.0
+    }
+  },
+  {
+    "name": "Bomi-parken aktivitetsceter",
+    "lat": 55.6422767565596,
+    "lng": 12.614867226520422,
+    "totalFunding": 9500.25,
+    "funding": {
+      "Danmark Spiser Sammen 2025": 9500.25
+    }
+  },
+  {
+    "name": "Brohusklubben (Tegnsprogshuset)",
+    "lat": 55.71576907530588,
+    "lng": 12.565927191808324,
+    "totalFunding": 690000.0,
+    "funding": {
+      "Seniorklubber 2024": 245000.0,
+      "Seniorklubber 2025": 200000.0,
+      "Seniorklubber 2026": 245000.0
+    }
+  },
+  {
+    "name": "Bryggergården",
+    "lat": 55.69367007900585,
+    "lng": 12.541202428229731,
+    "totalFunding": 21600.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 21600.0
+    }
+  },
+  {
+    "name": "Brønshøj-Husum Aktiv-Center",
+    "lat": 55.7019417583448,
+    "lng": 12.498135528372087,
+    "totalFunding": 840000.0,
+    "funding": {
+      "Seniorklubber 2024": 270000.0,
+      "Seniorklubber 2025": 285000.0,
+      "Seniorklubber 2026": 285000.0
+    }
+  },
+  {
+    "name": "Caritas",
+    "lat": 55.67384807379629,
+    "lng": 12.557435268850963,
+    "totalFunding": 75000.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 75000.0
+    }
+  },
+  {
+    "name": "C:NTACT",
+    "lat": 55.67677991341353,
+    "lng": 12.536537140015527,
+    "totalFunding": 50000.0,
+    "funding": {
+      "LGBT+ seniorer 2026": 50000.0
+    }
+  },
+  {
+    "name": "Copenhagen Floorbal Club",
+    "lat": 55.64997602367796,
+    "lng": 12.514500655356379,
+    "totalFunding": 34750.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 34750.0
+    }
+  },
+  {
+    "name": "PLC",
+    "lat": 55.653882019088826,
+    "lng": 12.598439084081058,
+    "totalFunding": 8251721.0,
+    "funding": {
+      "Seniorklubber 2024": 1980000.0,
+      "Seniorklubber 2025": 1998000.0,
+      "Seniorklubber 2026": 1998000.0,
+      "Seniordagen 2025": 9500.0,
+      "Ældre-fællesskaber 2025": 112209.0,
+      "Minoritetsetniske Seniorer 2025": 154012.0,
+      "ÆR-midler": 2000000.0
+    }
+  },
+  {
+    "name": "Dare Gender",
+    "lat": 55.68589994738561,
+    "lng": 12.546766913029131,
+    "totalFunding": 75000.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 75000.0
+    }
+  },
+  {
+    "name": "Dansk Skoleskak",
+    "lat": 55.67723176324622,
+    "lng": 12.576506770699769,
+    "totalFunding": 75000.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 75000.0
+    }
+  },
+  {
+    "name": "Drys ind",
+    "lat": 55.65829188406175,
+    "lng": 12.6072943553568,
+    "totalFunding": 124876.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 124876.0
+    }
+  },
+  {
+    "name": "Dronning Ingrids Hjem",
+    "lat": 55.65383198246556,
+    "lng": 12.52407735350784,
+    "totalFunding": 73600.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 73600.0
+    }
+  },
+  {
+    "name": "Eilersminde",
+    "lat": 55.718275206779076,
+    "lng": 12.482764997688546,
+    "totalFunding": 8431.17,
+    "funding": {
+      "Danmark Spiser Sammen 2025": 8431.17
+    }
+  },
+  {
+    "name": "Erindringsfabrikken",
+    "lat": 55.64165753830078,
+    "lng": 12.079988193987601,
+    "totalFunding": 78000.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 78000.0
+    }
+  },
+  {
+    "name": "Folkebevægelsen for et demensvenligt Danmark / Ældre Sagen",
+    "lat": 55.67918903137464,
+    "lng": 12.552892855538179,
+    "totalFunding": 53690.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 53690.0
+    }
+  },
+  {
+    "name": "Formidlerforeningen",
+    "lat": 55.67555786582125,
+    "lng": 12.585303382344398,
+    "totalFunding": 243500.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 243500.0
+    }
+  },
+  {
+    "name": "Frederiksberg Seniorklub og Værested",
+    "lat": 55.68692287733775,
+    "lng": 12.503413584193675,
+    "totalFunding": 427368.84,
+    "funding": {
+      "Seniorklubber 2024": 140000.0,
+      "Seniorklubber 2025": 140000.0,
+      "Seniorklubber 2026": 140000.0,
+      "Seniordagen 2025": 2500.0,
+      "Danmark Spiser Sammen 2025": 4868.84
+    }
+  },
+  {
+    "name": "Frelsens Hærs Omsorgsarbejde",
+    "lat": 55.66583965232027,
+    "lng": 12.51066534001503,
+    "totalFunding": 1180000.0,
+    "funding": {
+      "Seniorklubber 2024": 380000.0,
+      "Seniorklubber 2025": 400000.0,
+      "Seniorklubber 2026": 400000.0
+    }
+  },
+  {
+    "name": "Friberg Formidling Aps",
+    "lat": 55.66195320673148,
+    "lng": 12.516393097685912,
+    "totalFunding": 1636475.0,
+    "funding": {
+      "Civilsamfunds-puljen 2025": 667325.0,
+      "Civilsamfunds-puljen 2026": 969150.0
+    }
+  },
+  {
+    "name": "Frivilligcenter Vesterbro/Kgs. Enghave/Valby",
+    "lat": 55.64659765796777,
+    "lng": 12.529329213027212,
+    "totalFunding": 712596.0,
+    "funding": {
+      "Civilsamfunds-puljen 2025": 235865.0,
+      "Civilsamfunds-puljen 2026": 350798.0,
+      "Civilsamfunds-puljen 2027": 125933.0
+    }
+  },
+  {
+    "name": "Frivilligcenter SR-Bistand",
+    "lat": 55.701724044841946,
+    "lng": 12.551328626523244,
+    "totalFunding": 80000.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 80000.0
+    }
+  },
+  {
+    "name": "Guldbergs Have Hjemmepleje",
+    "lat": 55.693866971804376,
+    "lng": 12.55587328406164,
+    "totalFunding": 189500.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 115000.0,
+      "Puljen til Ældrefællesskaber 2026": 74500.0
+    }
+  },
+  {
+    "name": "Historiske Venner",
+    "lat": 55.66397520737925,
+    "lng": 12.606568041863671,
+    "totalFunding": 66845.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 66845.0
+    }
+  },
+  {
+    "name": "Husum Vænge Centret",
+    "lat": 55.708083894359966,
+    "lng": 12.475248247964464,
+    "totalFunding": 5754500.0,
+    "funding": {
+      "Seniorklubber 2024": 1860000.0,
+      "Seniorklubber 2025": 1940000.0,
+      "Seniorklubber 2026": 1950000.0,
+      "Seniordagen 2025": 4500.0
+    }
+  },
+  {
+    "name": "Hjemmeplejen Amager",
+    "lat": 55.64904715815028,
+    "lng": 12.608617272547058,
+    "totalFunding": 180660.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 170660.0,
+      "Danmark Spiser Sammen 2025": 10000.0
+    }
+  },
+  {
+    "name": "Hjemmeplejen Bispebjerg Nørrebro",
+    "lat": 55.71153318978734,
+    "lng": 12.524946770701423,
+    "totalFunding": 71281.54,
+    "funding": {
+      "Ældre-fællesskaber 2025": 65000.0,
+      "Danmark Spiser Sammen 2025": 6281.54
+    }
+  },
+  {
+    "name": "Hjemmeplejen VKV",
+    "lat": 55.65944233883088,
+    "lng": 12.518219063304212,
+    "totalFunding": 23400.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 23400.0
+    }
+  },
+  {
+    "name": "Hjemmepleje VBH",
+    "lat": 55.68622033050656,
+    "lng": 12.489549720836791,
+    "totalFunding": 3156.24,
+    "funding": {
+      "Danmark Spiser Sammen 2025": 3156.24
+    }
+  },
+  {
+    "name": "Højdevang Sogns Plejehjem",
+    "lat": 55.66034156334547,
+    "lng": 12.5038101976858,
+    "totalFunding": 4636.63,
+    "funding": {
+      "Danmark Spiser Sammen 2025": 4636.63
+    }
+  },
+  {
+    "name": "Idrætsforeningen Posten",
+    "lat": 55.66205937698583,
+    "lng": 12.522090382343757,
+    "totalFunding": 162500.0,
+    "funding": {
+      "Seniorklubber 2024": 50000.0,
+      "Seniorklubber 2025": 50000.0,
+      "Seniorklubber 2026": 50000.0,
+      "Seniordagen 2025": 12500.0
+    }
+  },
+  {
+    "name": "Idrætsfællesskabet",
+    "lat": 55.71388632617265,
+    "lng": 12.484822984813428,
+    "totalFunding": 500000.0,
+    "funding": {
+      "Seniorklubber 2024": 100000.0,
+      "Seniorklubber 2025": 200000.0,
+      "Seniorklubber 2026": 200000.0
+    }
+  },
+  {
+    "name": "Indvandrernes Seniorklub",
+    "lat": 55.664589248744136,
+    "lng": 12.519236343604428,
+    "totalFunding": 345000.0,
+    "funding": {
+      "Seniorklubber 2024": 115000.0,
+      "Seniorklubber 2025": 115000.0,
+      "Seniorklubber 2026": 115000.0
+    }
+  },
+  {
+    "name": "Kantorparkens Pensionistklub",
+    "lat": 55.72116739733833,
+    "lng": 12.536575355359808,
+    "totalFunding": 362000.0,
+    "funding": {
+      "Seniorklubber 2024": 110000.0,
+      "Seniorklubber 2025": 110000.0,
+      "Seniorklubber 2026": 142000.0
+    }
+  },
+  {
+    "name": "Kastanjahusene Plejehjem",
+    "lat": 55.69489077655015,
+    "lng": 12.558790170700615,
+    "totalFunding": 8092.52,
+    "funding": {
+      "Danmark Spiser Sammen 2025": 8092.52
+    }
+  },
+  {
+    "name": "Kofoed 65 +",
+    "lat": 55.63272520085031,
+    "lng": 12.641740867000255,
+    "totalFunding": 660000.0,
+    "funding": {
+      "Seniorklubber 2024": 220000.0,
+      "Seniorklubber 2025": 220000.0,
+      "Seniorklubber 2026": 220000.0
+    }
+  },
+  {
+    "name": "Kulturværkstedet Dagmar",
+    "lat": 55.66790294113396,
+    "lng": 12.544116726521729,
+    "totalFunding": 410475.52,
+    "funding": {
+      "Seniorklubber 2024": 130000.0,
+      "Seniorklubber 2025": 130000.0,
+      "Seniorklubber 2026": 130000.0,
+      "Seniordagen 2025": 10500.0,
+      "Danmark Spiser Sammen 2025": 9975.52
+    }
+  },
+  {
+    "name": "Klarahus",
+    "lat": 55.6936105186192,
+    "lng": 12.558061684193968,
+    "totalFunding": 88025.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 45825.0,
+      "Minoritetsetniske Seniorer 2025": 42200.0
+    }
+  },
+  {
+    "name": "Lise Uhrskov",
+    "lat": 55.67952925280203,
+    "lng": 12.569505613028857,
+    "totalFunding": 55855.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 55855.0
+    }
+  },
+  {
+    "name": "Musik for Alle København",
+    "lat": 55.67264512675039,
+    "lng": 12.54442209768636,
+    "totalFunding": 377500.0,
+    "funding": {
+      "Civilsamfunds-puljen 2025": 167000.0,
+      "Civilsamfunds-puljen 2026": 210500.0
+    }
+  },
+  {
+    "name": "Nabo Østerbro",
+    "lat": 55.699662455724024,
+    "lng": 12.578897640016677,
+    "totalFunding": 6831117.0,
+    "funding": {
+      "Seniorklubber 2024": 2050000.0,
+      "Seniorklubber 2025": 2300000.0,
+      "Seniorklubber 2026": 2300000.0,
+      "Seniordagen 2025": 21000.0,
+      "Minoritetsetniske Seniorer 2025": 160117.0
+    }
+  },
+  {
+    "name": "NY Boldklubben Union",
+    "lat": 55.699672101744085,
+    "lng": 12.517272982345593,
+    "totalFunding": 50000.0,
+    "funding": {
+      "Seniorklubber 2025": 50000.0
+    }
+  },
+  {
+    "name": "Nørrebro Vænge AKB København",
+    "lat": 55.69589745888311,
+    "lng": 12.540053041865065,
+    "totalFunding": 40800.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 40800.0
+    }
+  },
+  {
+    "name": "Omsorgscentret Hjortespring",
+    "lat": 55.74368825384032,
+    "lng": 12.429094986045111,
+    "totalFunding": 58719.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 58719.0
+    }
+  },
+  {
+    "name": "OK 67",
+    "lat": 55.68261954395627,
+    "lng": 12.505739341864503,
+    "totalFunding": 755000.0,
+    "funding": {
+      "Seniorklubber 2024": 275000.0,
+      "Seniorklubber 2025": 240000.0,
+      "Seniorklubber 2026": 240000.0
+    }
+  },
+  {
+    "name": "Pan Idræt",
+    "lat": 55.68895750865244,
+    "lng": 12.537119501384462,
+    "totalFunding": 500000.0,
+    "funding": {
+      "LGBT+ Seniorer 2025": 250000.0,
+      "LGBT+ seniorer 2026": 250000.0
+    }
+  },
+  {
+    "name": "Pakistanske Danske Pensioneredes Forening",
+    "lat": 55.69907157255743,
+    "lng": 12.544158984194269,
+    "totalFunding": 333000.0,
+    "funding": {
+      "Seniorklubber 2024": 165000.0,
+      "Seniorklubber 2025": 84000.0,
+      "Seniorklubber 2026": 84000.0
+    }
+  },
+  {
+    "name": "Peder Lykke Centret",
+    "lat": 55.65388208857679,
+    "lng": 12.598567841863082,
+    "totalFunding": 128121.24,
+    "funding": {
+      "Ældre-fællesskaber 2025": 108900.0,
+      "Danmark Spiser Sammen 2025": 9221.24,
+      "Puljen til Ældrefællesskaber 2026": 10000.0
+    }
+  },
+  {
+    "name": "Pensionist Idræt",
+    "lat": 55.64762210889808,
+    "lng": 12.417447572547028,
+    "totalFunding": 7415000.0,
+    "funding": {
+      "Seniorklubber 2024": 2800000.0,
+      "Seniorklubber 2025": 2300000.0,
+      "Seniorklubber 2026": 2300000.0,
+      "Seniordagen 2025": 15000.0
+    }
+  },
+  {
+    "name": "Plejecenter Bomi-Parken",
+    "lat": 55.642294921269226,
+    "lng": 12.614888684191472,
+    "totalFunding": 73100.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 73100.0
+    }
+  },
+  {
+    "name": "Plejecentret Rosenborgcentret",
+    "lat": 55.68722348437113,
+    "lng": 12.583904853509454,
+    "totalFunding": 24894.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 24894.0
+    }
+  },
+  {
+    "name": "Plejehjemmet Kærbo",
+    "lat": 55.703660908664666,
+    "lng": 12.580807597687889,
+    "totalFunding": 9388.4,
+    "funding": {
+      "Danmark Spiser Sammen 2025": 9388.4
+    }
+  },
+  {
+    "name": "Plejehjemmet Møllehuset",
+    "lat": 55.693822418029306,
+    "lng": 12.558829113029516,
+    "totalFunding": 73300.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 73300.0
+    }
+  },
+  {
+    "name": "Plejehjemmet Slottet",
+    "lat": 55.69365465339215,
+    "lng": 12.55678515350975,
+    "totalFunding": 50600.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 50600.0
+    }
+  },
+  {
+    "name": "Plejehjemmet Nybodergården",
+    "lat": 55.6892561120282,
+    "lng": 12.585782782345138,
+    "totalFunding": 77600.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 77600.0
+    }
+  },
+  {
+    "name": "Roklubben Skjold (senior)",
+    "lat": 55.71528809000048,
+    "lng": 12.585390993449037,
+    "totalFunding": 666870.0,
+    "funding": {
+      "Seniorklubber 2024": 220000.0,
+      "Seniorklubber 2025": 220000.0,
+      "Seniorklubber 2026": 220000.0,
+      "Seniordagen 2025": 6870.0
+    }
+  },
+  {
+    "name": "Rundskuedagen plejecenter",
+    "lat": 55.668590227249176,
+    "lng": 12.552835268850682,
+    "totalFunding": 75500.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 75500.0
+    }
+  },
+  {
+    "name": "Rymarksvænge Pensionistklub",
+    "lat": 55.725174573076636,
+    "lng": 12.5625515707021,
+    "totalFunding": 920000.0,
+    "funding": {
+      "Seniorklubber 2024": 435000.0,
+      "Seniorklubber 2025": 220000.0,
+      "Seniorklubber 2026": 249000.0,
+      "Seniordagen 2025": 6000.0,
+      "Danmark Spiser Sammen 2025": 10000.0
+    }
+  },
+  {
+    "name": "Røde Kors Hovedstaden",
+    "lat": 55.69888340383447,
+    "lng": 12.536489355358693,
+    "totalFunding": 6195288.73,
+    "funding": {
+      "Seniorklubber 2024": 2060000.0,
+      "Seniorklubber 2025": 2060000.0,
+      "Seniorklubber 2026": 2060000.0,
+      "Seniordagen 2025": 6000.0,
+      "Danmark Spiser Sammen 2025": 9288.73
+    }
+  },
+  {
+    "name": "Samlinspunktet Indre By",
+    "lat": 55.67642327231052,
+    "lng": 12.574739126522044,
+    "totalFunding": 2440197.0,
+    "funding": {
+      "Seniorklubber 2024": 790000.0,
+      "Seniorklubber 2025": 790000.0,
+      "Seniorklubber 2026": 790000.0,
+      "Seniordagen 2025": 10650.0,
+      "Ældre-fællesskaber 2025": 59547.0
+    }
+  },
+  {
+    "name": "Sammen på Tværs",
+    "lat": 55.685385114268875,
+    "lng": 12.551778940016005,
+    "totalFunding": 904500.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 103500.0,
+      "Civilsamfunds-puljen 2025": 248100.0,
+      "Civilsamfunds-puljen 2026": 393000.0,
+      "Civilsamfunds-puljen 2027": 159900.0
+    }
+  },
+  {
+    "name": "Sangkraftcentret Storbyen synger",
+    "lat": 55.67931942223716,
+    "lng": 12.555320868851224,
+    "totalFunding": 60000.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 60000.0
+    }
+  },
+  {
+    "name": "SeniorCentret Sct. Joseph",
+    "lat": 55.694036601394465,
+    "lng": 12.559799011180866,
+    "totalFunding": 4774713.88,
+    "funding": {
+      "Seniorklubber 2024": 1750000.0,
+      "Seniorklubber 2025": 1500000.0,
+      "Seniorklubber 2026": 1500000.0,
+      "Seniordagen 2025": 15680.0,
+      "Danmark Spiser Sammen 2025": 9033.88
+    }
+  },
+  {
+    "name": "Seniorhuset VOC",
+    "lat": 55.66427161554524,
+    "lng": 12.518678455909772,
+    "totalFunding": 7354000.0,
+    "funding": {
+      "Seniorklubber 2024": 2330000.0,
+      "Seniorklubber 2025": 2500000.0,
+      "Seniorklubber 2026": 2500000.0,
+      "Seniordagen 2025": 24000.0
+    }
+  },
+  {
+    "name": "Seniorklubben v/ Det Jødiske Samfund i DK",
+    "lat": 55.68148865633975,
+    "lng": 12.573116429165122,
+    "totalFunding": 518000.0,
+    "funding": {
+      "Seniorklubber 2024": 163000.0,
+      "Seniorklubber 2025": 170000.0,
+      "Seniorklubber 2026": 185000.0
+    }
+  },
+  {
+    "name": "Seniorklubben Vanløse",
+    "lat": 55.68617006929924,
+    "lng": 12.490200126522627,
+    "totalFunding": 4530125.0,
+    "funding": {
+      "Seniorklubber 2024": 1100000.0,
+      "Seniorklubber 2025": 1700000.0,
+      "Seniorklubber 2026": 1700000.0,
+      "Seniordagen 2025": 20125.0,
+      "Danmark Spiser Sammen 2025": 10000.0
+    }
+  },
+  {
+    "name": "Seniorklubben ved Frelsens Hær, Nørrebro",
+    "lat": 55.69700317689174,
+    "lng": 12.548827265154705,
+    "totalFunding": 920000.0,
+    "funding": {
+      "Seniorklubber 2024": 280000.0,
+      "Seniorklubber 2025": 320000.0,
+      "Seniorklubber 2026": 320000.0
+    }
+  },
+  {
+    "name": "Settlementets Klub Senior",
+    "lat": 55.66651427955971,
+    "lng": 12.551349262636593,
+    "totalFunding": 2710000.0,
+    "funding": {
+      "Seniorklubber 2024": 810000.0,
+      "Seniorklubber 2025": 900000.0,
+      "Seniorklubber 2026": 900000.0,
+      "Ældre-fællesskaber 2025": 100000.0
+    }
+  },
+  {
+    "name": "Settlementet, Fakhras Kvindeklub",
+    "lat": 55.6665099272206,
+    "lng": 12.550983608304396,
+    "totalFunding": 4550.0,
+    "funding": {
+      "Danmark Spiser Sammen 2025": 4550.0
+    }
+  },
+  {
+    "name": "Settlementet, Madam Blå",
+    "lat": 55.66631040698267,
+    "lng": 12.551366872243962,
+    "totalFunding": 103000.0,
+    "funding": {
+      "Danmark Spiser Sammen 2025": 10000.0,
+      "Minoritetsetniske Seniorer 2025": 93000.0
+    }
+  },
+  {
+    "name": "Støtteforeningen for Mænds Mødested i Elefanthuset",
+    "lat": 55.69563536664741,
+    "lng": 12.559908982345345,
+    "totalFunding": 79500.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 79500.0
+    }
+  },
+  {
+    "name": "Studenter Settlementets Boldklub",
+    "lat": 55.670628324624296,
+    "lng": 12.548498313028437,
+    "totalFunding": 1389925.0,
+    "funding": {
+      "Seniorklubber 2024": 460000.0,
+      "Seniorklubber 2025": 460000.0,
+      "Seniorklubber 2026": 460000.0,
+      "Seniordagen 2025": 9925.0
+    }
+  },
+  {
+    "name": "Sundbyernes Seniorklub",
+    "lat": 55.6637672761187,
+    "lng": 12.606766092868282,
+    "totalFunding": 750000.0,
+    "funding": {
+      "Seniorklubber 2024": 100000.0,
+      "Seniorklubber 2025": 325000.0,
+      "Seniorklubber 2026": 325000.0
+    }
+  },
+  {
+    "name": "Sparta Atletik og løb",
+    "lat": 55.70478501830774,
+    "lng": 12.574954068852472,
+    "totalFunding": 50000.0,
+    "funding": {
+      "Puljen til Ældrefællesskaber 2026": 50000.0
+    }
+  },
+  {
+    "name": "Sydhavnens Seniorer",
+    "lat": 55.65092917304913,
+    "lng": 12.536450384191912,
+    "totalFunding": 8457553.0,
+    "funding": {
+      "Seniorklubber 2024": 2500000.0,
+      "Seniorklubber 2025": 2925000.0,
+      "Seniorklubber 2026": 2925000.0,
+      "Seniordagen 2025": 19528.0,
+      "Ældre-fællesskaber 2025": 80000.0,
+      "Danmark Spiser Sammen 2025": 8025.0
+    }
+  },
+  {
+    "name": "Tingbjerg Pensionist Center",
+    "lat": 55.72258413059168,
+    "lng": 12.48335229768886,
+    "totalFunding": 2497950.0,
+    "funding": {
+      "Seniorklubber 2024": 770000.0,
+      "Seniorklubber 2025": 800000.0,
+      "Seniorklubber 2026": 800000.0,
+      "Seniordagen 2025": 12950.0,
+      "Ældre-fællesskaber 2025": 105000.0,
+      "Danmark Spiser Sammen 2025": 10000.0
+    }
+  },
+  {
+    "name": "Thorvaldsens Museeum",
+    "lat": 55.67655452266382,
+    "lng": 12.578257768851065,
+    "totalFunding": 14964.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 14964.0
+    }
+  },
+  {
+    "name": "Valby Værested",
+    "lat": 55.666710075311016,
+    "lng": 12.505424726521632,
+    "totalFunding": 206500.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 40800.0,
+      "Minoritetsetniske Seniorer 2025": 108000.0,
+      "Puljen til Ældrefællesskaber 2026": 57700.0
+    }
+  },
+  {
+    "name": "Verdens kvinder",
+    "lat": 55.68686472903587,
+    "lng": 12.558626028371258,
+    "totalFunding": 79990.0,
+    "funding": {
+      "Puljen til Ældrefællesskaber 2026": 79990.0
+    }
+  },
+  {
+    "name": "Valbyholm Almene Ældreboliger",
+    "lat": 55.67192407241729,
+    "lng": 12.495232497686377,
+    "totalFunding": 153263.5,
+    "funding": {
+      "Ældre-fællesskaber 2025": 65682.5,
+      "Puljen til Ældrefællesskaber 2026": 87581.0
+    }
+  },
+  {
+    "name": "Verdishave",
+    "lat": 55.64525003638631,
+    "lng": 12.527272355356102,
+    "totalFunding": 82450.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 73600.0,
+      "Minoritetsetniske Seniorer 2025": 8850.0
+    }
+  },
+  {
+    "name": "Vesterbro Sogn Menighedsråd",
+    "lat": 55.66976619011258,
+    "lng": 12.549298852754289,
+    "totalFunding": 577455.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 577455.0
+    }
+  },
+  {
+    "name": "Voldboligerne",
+    "lat": 55.67217822333897,
+    "lng": 12.596990440015386,
+    "totalFunding": 75835.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 75835.0
+    }
+  },
+  {
+    "name": "Walk & Talk Vanløse",
+    "lat": 55.67998116936657,
+    "lng": 12.48518326885125,
+    "totalFunding": 272000.0,
+    "funding": {
+      "Seniorklubber 2024": 92000.0,
+      "Seniorklubber 2025": 90000.0,
+      "Seniorklubber 2026": 90000.0
+    }
+  },
+  {
+    "name": "Ældresagen City",
+    "lat": 55.671288173896805,
+    "lng": 12.548245626521839,
+    "totalFunding": 5502000.0,
+    "funding": {
+      "Seniorklubber 2024": 1800000.0,
+      "Seniorklubber 2025": 1800000.0,
+      "Seniorklubber 2026": 1800000.0,
+      "Seniordagen 2025": 6000.0,
+      "Ældre-fællesskaber 2025": 45000.0,
+      "Danmark Spiser Sammen 2025": 10000.0,
+      "Puljen til Ældrefællesskaber 2026": 41000.0
+    }
+  },
+  {
+    "name": "Øbro Motion",
+    "lat": 55.70750511788795,
+    "lng": 12.587878626523654,
+    "totalFunding": 935000.0,
+    "funding": {
+      "Seniorklubber 2024": 305000.0,
+      "Seniorklubber 2025": 305000.0,
+      "Seniorklubber 2026": 305000.0,
+      "Ældre-fællesskaber 2025": 20000.0
+    }
+  },
+  {
+    "name": "Ørestad Plejecenter",
+    "lat": 55.619281873037636,
+    "lng": 12.573759855354886,
+    "totalFunding": 70458.62,
+    "funding": {
+      "Ældre-fællesskaber 2025": 63700.0,
+      "Danmark Spiser Sammen 2025": 6758.62
+    }
+  },
+  {
+    "name": "Østerbro Lokalhistorisk Forening",
+    "lat": 55.713156460960285,
+    "lng": 12.567302668852864,
+    "totalFunding": 7500.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 7500.0
+    }
+  },
+  {
+    "name": "Aalholmhjemmet",
+    "lat": 55.66602872182281,
+    "lng": 12.49325128234401,
+    "totalFunding": 9143.12,
+    "funding": {
+      "Danmark Spiser Sammen 2025": 9143.12
+    }
+  },
+  {
+    "name": "Ældreboligen voldboligerne",
+    "lat": 55.67219962277937,
+    "lng": 12.596422597686342,
+    "totalFunding": 80000.0,
+    "funding": {
+      "Ældre-fællesskaber 2025": 80000.0
+    }
+  }
+]

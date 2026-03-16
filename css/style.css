@@ -1,0 +1,233 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  display: grid;
+  grid-template-columns: 300px 1fr 0px;
+  grid-template-rows: 100vh;
+  height: 100vh;
+  overflow: hidden;
+  transition: grid-template-columns 0.3s ease;
+}
+body.detail-open {
+  grid-template-columns: 300px 1fr 360px;
+}
+
+/* --- Filter Panel (left) --- */
+#filter-panel {
+  grid-column: 1;
+  background: #f8f9fa;
+  border-right: 1px solid #dee2e6;
+  padding: 20px 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+#filter-panel h1 {
+  font-size: 18px;
+  color: #212529;
+  margin-bottom: 4px;
+}
+#filter-panel h3 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6c757d;
+  margin-bottom: 6px;
+}
+.filter-section {
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 14px;
+}
+.filter-section:last-child { border-bottom: none; }
+
+#search-box {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+#search-box:focus { border-color: #86b7fe; box-shadow: 0 0 0 3px rgba(13,110,253,0.15); }
+
+.checkbox-group { display: flex; flex-direction: column; gap: 5px; }
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #495057;
+  cursor: pointer;
+}
+.checkbox-group input[type="checkbox"] {
+  width: 16px; height: 16px;
+  accent-color: #0d6efd;
+  cursor: pointer;
+}
+
+.range-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+}
+.range-row input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+#reset-btn {
+  padding: 8px 16px;
+  background: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #495057;
+  transition: background 0.15s;
+}
+#reset-btn:hover { background: #dee2e6; }
+
+#stats {
+  font-size: 13px;
+  color: #6c757d;
+  text-align: center;
+}
+#missing-note {
+  font-size: 11px;
+  color: #adb5bd;
+  font-style: italic;
+}
+
+/* --- Map --- */
+#map {
+  grid-column: 2;
+  height: 100vh;
+}
+
+/* --- Detail Panel (right) --- */
+#detail-panel {
+  grid-column: 3;
+  background: #ffffff;
+  border-left: 1px solid #dee2e6;
+  padding: 0;
+  overflow-y: auto;
+  display: none;
+}
+body.detail-open #detail-panel { display: block; }
+
+#detail-header {
+  position: sticky;
+  top: 0;
+  background: #0d6efd;
+  color: white;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+#detail-name {
+  font-size: 16px;
+  font-weight: 600;
+  flex: 1;
+  margin-right: 12px;
+}
+#close-detail {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+  opacity: 0.8;
+}
+#close-detail:hover { opacity: 1; }
+
+#detail-body { padding: 20px; }
+#detail-total {
+  font-size: 22px;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 4px;
+}
+#detail-total-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+#detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+#detail-table th {
+  text-align: left;
+  padding: 8px 6px;
+  border-bottom: 2px solid #dee2e6;
+  color: #6c757d;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+#detail-table td {
+  padding: 8px 6px;
+  border-bottom: 1px solid #f1f3f5;
+}
+#detail-table td:last-child {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+#detail-table tr:last-child td { border-bottom: none; }
+
+/* --- Legend --- */
+#legend {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  z-index: 1000;
+  background: white;
+  padding: 12px 14px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  font-size: 11px;
+  transition: right 0.3s ease;
+}
+body.detail-open #legend { right: 380px; }
+#legend h4 {
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #495057;
+}
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 3px;
+  color: #495057;
+}
+.legend-swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
+
+/* --- Leaflet tooltip override --- */
+.leaflet-tooltip {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}

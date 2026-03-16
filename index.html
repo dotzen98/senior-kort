@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seniorklubber i København - Puljemidler</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- FILTER PANEL -->
+  <div id="filter-panel">
+    <div>
+      <h1>Seniorklubber i København</h1>
+      <p style="font-size:13px;color:#6c757d;margin-top:4px;">Overblik over bevilgede puljemidler</p>
+      <a href="admin.html" style="display:inline-block;margin-top:10px;font-size:12px;color:#0d6efd;text-decoration:none;">⚙ Administrer klubber</a>
+    </div>
+
+    <div class="filter-section">
+      <h3>Søg</h3>
+      <input type="text" id="search-box" placeholder="Søg efter klub..." />
+    </div>
+
+    <div class="filter-section">
+      <h3>Puljer</h3>
+      <div id="program-filters" class="checkbox-group"></div>
+    </div>
+
+    <div class="filter-section">
+      <h3>År</h3>
+      <div id="year-filters" class="checkbox-group"></div>
+    </div>
+
+    <div class="filter-section">
+      <h3>Beløb (DKK)</h3>
+      <div class="range-row">
+        <input type="number" id="min-amount" placeholder="Min" min="0" step="1000" />
+        <span>—</span>
+        <input type="number" id="max-amount" placeholder="Max" min="0" step="1000" />
+      </div>
+    </div>
+
+    <button id="reset-btn">Nulstil filtre</button>
+    <div id="stats"></div>
+    <div id="missing-note"></div>
+  </div>
+
+  <!-- MAP -->
+  <div id="map"></div>
+
+  <!-- DETAIL PANEL -->
+  <div id="detail-panel">
+    <div id="detail-header">
+      <div id="detail-name"></div>
+      <button id="close-detail">&times;</button>
+    </div>
+    <div id="detail-body">
+      <div id="detail-total"></div>
+      <div id="detail-total-label">Samlet bevilling</div>
+      <table id="detail-table">
+        <thead><tr><th>Pulje</th><th>Beløb</th></tr></thead>
+        <tbody id="detail-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- LEGEND -->
+  <div id="legend">
+    <h4>Samlet bevilling</h4>
+    <div id="legend-items"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/map.js"></script>
+</body>
+</html>

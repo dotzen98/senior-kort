@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrer Seniorklubber</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+
+  <header id="header">
+    <h1>Administrer Seniorklubber</h1>
+    <div id="header-actions">
+      <span id="save-status"></span>
+      <button id="save-btn" class="btn btn-primary" disabled>Gem ændringer</button>
+      <a href="index.html" class="btn btn-secondary">← Vis kort</a>
+    </div>
+  </header>
+
+  <div id="app">
+
+    <!-- LEFT: Club list -->
+    <div id="club-list-panel">
+      <div id="club-list-header">
+        <input type="text" id="club-search" placeholder="Søg klub..." />
+        <button id="add-club-btn" class="btn btn-primary btn-sm">+ Ny klub</button>
+      </div>
+      <ul id="club-list"></ul>
+    </div>
+
+    <!-- RIGHT: Editor -->
+    <div id="editor-panel">
+
+      <!-- Empty state -->
+      <div id="empty-state">
+        <p>Vælg en klub fra listen, eller opret en ny.</p>
+      </div>
+
+      <!-- Club editor (shown when club is selected) -->
+      <div id="club-editor" class="hidden">
+        <div class="editor-section">
+          <h2 id="editor-club-name-heading"></h2>
+          <div class="form-grid">
+            <label>Navn
+              <input type="text" id="edit-name" />
+            </label>
+            <label>Breddegrad (lat)
+              <input type="number" id="edit-lat" step="any" />
+            </label>
+            <label>Længdegrad (lng)
+              <input type="number" id="edit-lng" step="any" />
+            </label>
+          </div>
+          <div class="editor-actions">
+            <button id="save-details-btn" class="btn btn-primary btn-sm">Gem detaljer</button>
+            <button id="delete-club-btn" class="btn btn-danger btn-sm">Slet klub</button>
+          </div>
+        </div>
+
+        <div class="editor-section">
+          <h3>Bevillinger</h3>
+          <table id="funding-table">
+            <thead>
+              <tr><th>Pulje</th><th>Beløb (DKK)</th><th></th></tr>
+            </thead>
+            <tbody id="funding-tbody"></tbody>
+          </table>
+          <p id="no-funding-msg" class="muted hidden">Ingen bevillinger endnu.</p>
+        </div>
+
+        <div class="editor-section">
+          <h3>Tilføj bevilling</h3>
+          <div class="add-funding-form">
+            <label>Pulje
+              <select id="program-select"></select>
+            </label>
+            <div id="new-program-row" class="hidden">
+              <label>Ny pulje
+                <input type="text" id="new-program-input" placeholder="Navn på ny pulje" />
+              </label>
+            </div>
+            <label>År
+              <select id="year-select"></select>
+            </label>
+            <div id="new-year-row" class="hidden">
+              <label>Nyt år
+                <input type="number" id="new-year-input" placeholder="f.eks. 2027" min="2020" max="2040" />
+              </label>
+            </div>
+            <label>Beløb (DKK)
+              <input type="number" id="funding-amount" placeholder="0" min="0" step="1" />
+            </label>
+            <button id="add-funding-btn" class="btn btn-primary btn-sm">Tilføj</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add club form (shown when "+ Ny klub" clicked) -->
+      <div id="add-club-form" class="hidden">
+        <div class="editor-section">
+          <h2>Ny klub</h2>
+          <div class="form-grid">
+            <label>Navn
+              <input type="text" id="new-club-name" placeholder="Klubbens navn" />
+            </label>
+          </div>
+          <p class="map-instructions">Klik på kortet for at vælge placering:</p>
+          <div id="location-map"></div>
+          <div class="coords-display">
+            <span>Lat: <strong id="new-lat-display">—</strong></span>
+            <span>Lng: <strong id="new-lng-display">—</strong></span>
+          </div>
+          <input type="hidden" id="new-lat" />
+          <input type="hidden" id="new-lng" />
+          <div class="editor-actions">
+            <button id="confirm-add-club-btn" class="btn btn-primary btn-sm">Opret klub</button>
+            <button id="cancel-add-club-btn" class="btn btn-secondary btn-sm">Annuller</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div id="toast"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
