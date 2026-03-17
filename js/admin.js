@@ -383,7 +383,7 @@ function showToast(msg, type = '') {
   // Hide save button (changes are saved immediately now)
   document.getElementById('save-btn').style.display = 'none';
   document.getElementById('save-status').textContent = 'Auto-gem aktiv';
-  document.getElementById('save-status').style.color = '#198754';
+  document.getElementById('save-status').style.color = '#f9f9f9';
 
   // Club search
   document.getElementById('club-search').addEventListener('input', (e) => {
