@@ -60,14 +60,12 @@
   // ========== LOAD DATA ==========
   let data;
   try {
-    const response = await fetch('data/data.json');
-    data = await response.json();
+    data = await loadClubsFromSupabase();
   } catch (e) {
     document.getElementById('map').innerHTML =
       '<div style="padding:40px;color:#dc3545;font-size:15px">' +
-      '<strong>Fejl:</strong> Kunne ikke indlæse data.json.<br><br>' +
-      'Åbn siden via serveren: <code>http://localhost:8000</code><br>' +
-      '(ikke som en lokal fil i browseren)</div>';
+      '<strong>Fejl:</strong> Kunne ikke indlæse data fra databasen.<br><br>' +
+      e.message + '</div>';
     return;
   }
 

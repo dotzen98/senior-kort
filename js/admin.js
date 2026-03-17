@@ -1,7 +1,6 @@
 // ── State ──────────────────────────────────────────────────────
 let data = [];
 let selectedIndex = null;
-let isDirty = false;
 let locationMap = null;
 let locationMarker = null;
 
@@ -45,41 +44,10 @@ function formatDKK(amount) {
   }).format(amount);
 }
 
-// ── Persistence ─────────────────────────────────────────────────
+// ── Persistence (Supabase) ──────────────────────────────────────
 
 async function loadData() {
-  const res = await fetch('data/data.json');
-  data = await res.json();
-}
-
-async function saveData() {
-  try {
-    const res = await fetch('/api/save', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    });
-    if (!res.ok) throw new Error(await res.text());
-    isDirty = false;
-    updateSaveBtn();
-    showToast('Gemt!', 'success');
-  } catch (e) {
-    showToast('Fejl ved gem: ' + e.message, 'error');
-  }
-}
-
-// ── Dirty state ──────────────────────────────────────────────────
-
-function markDirty() {
-  isDirty = true;
-  updateSaveBtn();
-}
-
-function updateSaveBtn() {
-  const btn = document.getElementById('save-btn');
-  const status = document.getElementById('save-status');
-  btn.disabled = !isDirty;
-  status.textContent = isDirty ? 'Ugemte ændringer' : '';
+  data = await loadClubsFromSupabase();
 }
 
 // ── Club list ────────────────────────────────────────────────────
@@ -110,7 +78,6 @@ function selectClub(index) {
   selectedIndex = index;
   renderClubList(document.getElementById('club-search').value);
 
-  // Hide add-club form, show editor
   document.getElementById('empty-state').classList.add('hidden');
   document.getElementById('add-club-form').classList.add('hidden');
   document.getElementById('club-editor').classList.remove('hidden');
@@ -194,7 +161,6 @@ function refreshDropdowns() {
   newYearOpt.textContent = '+ Nyt år…';
   yearSel.appendChild(newYearOpt);
 
-  // Trigger visibility logic
   toggleNewProgram();
   toggleNewYear();
 }
@@ -213,7 +179,7 @@ function toggleNewYear() {
 
 // ── Funding mutations ────────────────────────────────────────────
 
-function addFunding() {
+async function addFunding() {
   const progSel = document.getElementById('program-select');
   const yearSel = document.getElementById('year-select');
   const amountInput = document.getElementById('funding-amount');
@@ -232,34 +198,54 @@ function addFunding() {
   if (yearSel.value === '__new__' && !year) return showToast('Angiv et gyldigt år', 'error');
   if (!amount || amount <= 0) return showToast('Angiv et beløb større end 0', 'error');
 
-  const key = buildKey(program, year);
   const org = data[selectedIndex];
+  const key = buildKey(program, year);
 
-  if (org.funding[key] !== undefined) {
-    org.funding[key] += amount;
+  // Check if this funding key already exists - if so, update amount
+  if (org._fundingIds[key]) {
+    const newAmount = org.funding[key] + amount;
+    const { error } = await sb.from('funding')
+      .update({ amount: newAmount })
+      .eq('id', org._fundingIds[key]);
+    if (error) return showToast('Fejl: ' + error.message, 'error');
+    org.funding[key] = newAmount;
   } else {
+    const { data: inserted, error } = await sb.from('funding')
+      .insert({ club_id: org.id, program, year, amount })
+      .select()
+      .single();
+    if (error) return showToast('Fejl: ' + error.message, 'error');
     org.funding[key] = amount;
+    org._fundingIds[key] = inserted.id;
   }
-  recalcTotal(org);
 
+  recalcTotal(org);
   amountInput.value = '';
-  markDirty();
   renderEditor();
   renderClubList(document.getElementById('club-search').value);
+  showToast('Bevilling tilføjet', 'success');
 }
 
-function deleteFunding(key) {
+async function deleteFunding(key) {
   const org = data[selectedIndex];
+  const fundingId = org._fundingIds[key];
+
+  if (!fundingId) return showToast('Kunne ikke finde bevilling', 'error');
+
+  const { error } = await sb.from('funding').delete().eq('id', fundingId);
+  if (error) return showToast('Fejl: ' + error.message, 'error');
+
   delete org.funding[key];
+  delete org._fundingIds[key];
   recalcTotal(org);
-  markDirty();
   renderEditor();
   renderClubList(document.getElementById('club-search').value);
+  showToast('Bevilling slettet', 'success');
 }
 
 // ── Club mutations ────────────────────────────────────────────────
 
-function saveClubDetails() {
+async function saveClubDetails() {
   const org = data[selectedIndex];
   const name = document.getElementById('edit-name').value.trim();
   const lat = parseFloat(document.getElementById('edit-lat').value);
@@ -268,28 +254,36 @@ function saveClubDetails() {
   if (!name) return showToast('Navn må ikke være tomt', 'error');
   if (isNaN(lat) || isNaN(lng)) return showToast('Ugyldige koordinater', 'error');
 
+  const { error } = await sb.from('clubs')
+    .update({ name, lat, lng })
+    .eq('id', org.id);
+  if (error) return showToast('Fejl: ' + error.message, 'error');
+
   org.name = name;
   org.lat = lat;
   org.lng = lng;
 
-  markDirty();
   document.getElementById('editor-club-name-heading').textContent = name;
   renderClubList(document.getElementById('club-search').value);
-  showToast('Detaljer opdateret', 'success');
+  showToast('Detaljer gemt', 'success');
 }
 
-function deleteClub() {
+async function deleteClub() {
   const org = data[selectedIndex];
   if (!confirm(`Slet "${org.name}"? Dette kan ikke fortrydes.`)) return;
+
+  const { error } = await sb.from('clubs').delete().eq('id', org.id);
+  if (error) return showToast('Fejl: ' + error.message, 'error');
+
   data.splice(selectedIndex, 1);
   selectedIndex = null;
-  markDirty();
   renderClubList(document.getElementById('club-search').value);
   document.getElementById('club-editor').classList.add('hidden');
   document.getElementById('empty-state').classList.remove('hidden');
+  showToast('Klub slettet', 'success');
 }
 
-function addClub() {
+async function addClub() {
   const name = document.getElementById('new-club-name').value.trim();
   const lat = parseFloat(document.getElementById('new-lat').value);
   const lng = parseFloat(document.getElementById('new-lng').value);
@@ -297,13 +291,25 @@ function addClub() {
   if (!name) return showToast('Angiv et navn', 'error');
   if (isNaN(lat) || isNaN(lng)) return showToast('Klik på kortet for at vælge placering', 'error');
 
-  data.push({ name, lat, lng, totalFunding: 0, funding: {} });
-  markDirty();
+  const { data: inserted, error } = await sb.from('clubs')
+    .insert({ name, lat, lng })
+    .select()
+    .single();
+  if (error) return showToast('Fejl: ' + error.message, 'error');
+
+  data.push({
+    id: inserted.id,
+    name, lat, lng,
+    totalFunding: 0,
+    funding: {},
+    _fundingIds: {}
+  });
 
   const newIndex = data.length - 1;
   renderClubList('');
   document.getElementById('club-search').value = '';
   selectClub(newIndex);
+  showToast('Klub oprettet', 'success');
 }
 
 // ── Add-club form & location map ──────────────────────────────────
@@ -322,7 +328,6 @@ function showAddClubForm() {
   document.getElementById('new-lat-display').textContent = '—';
   document.getElementById('new-lng-display').textContent = '—';
 
-  // Init or reset mini map
   if (locationMap) {
     locationMap.remove();
     locationMap = null;
@@ -333,7 +338,6 @@ function showAddClubForm() {
     attribution: '© OpenStreetMap'
   }).addTo(locationMap);
 
-  // Show existing clubs as grey dots for context
   data.forEach(org => {
     L.circleMarker([org.lat, org.lng], {
       radius: 4, fillColor: '#aaa', color: '#555', weight: 1,
@@ -365,21 +369,21 @@ function showToast(msg, type = '') {
   toastTimer = setTimeout(() => { el.className = ''; }, 2500);
 }
 
-// ── Warn on unload ────────────────────────────────────────────────
-
-window.addEventListener('beforeunload', (e) => {
-  if (isDirty) {
-    e.preventDefault();
-    e.returnValue = '';
-  }
-});
-
 // ── Init ──────────────────────────────────────────────────────────
 
 (async function init() {
-  await loadData();
+  try {
+    await loadData();
+  } catch (e) {
+    showToast('Fejl ved indlæsning: ' + e.message, 'error');
+    return;
+  }
   renderClubList();
-  updateSaveBtn();
+
+  // Hide save button (changes are saved immediately now)
+  document.getElementById('save-btn').style.display = 'none';
+  document.getElementById('save-status').textContent = 'Auto-gem aktiv';
+  document.getElementById('save-status').style.color = '#198754';
 
   // Club search
   document.getElementById('club-search').addEventListener('input', (e) => {
@@ -413,7 +417,4 @@ window.addEventListener('beforeunload', (e) => {
     renderClubList(document.getElementById('club-search').value);
     if (locationMap) { locationMap.remove(); locationMap = null; }
   });
-
-  // Global save
-  document.getElementById('save-btn').addEventListener('click', saveData);
 })();
