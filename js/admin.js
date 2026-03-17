@@ -369,6 +369,90 @@ function showToast(msg, type = '') {
   toastTimer = setTimeout(() => { el.className = ''; }, 2500);
 }
 
+// ── Excel export ──────────────────────────────────────────────────
+
+async function exportToExcel() {
+  if (data.length === 0) return showToast('Ingen data at eksportere', 'error');
+
+  // Collect all unique funding keys, sorted
+  const allKeys = new Set();
+  data.forEach(org => Object.keys(org.funding).forEach(k => allKeys.add(k)));
+  const sortedKeys = [...allKeys].sort();
+
+  const wb = new ExcelJS.Workbook();
+  const ws = wb.addWorksheet('Seniorklubber');
+
+  // Define columns
+  ws.columns = [
+    { header: 'Klub', key: 'klub', width: 30 },
+    ...sortedKeys.map(k => ({ header: k, key: k, width: 16 })),
+    { header: 'Total', key: 'total', width: 18 }
+  ];
+
+  // Add data rows
+  data.forEach(org => {
+    const row = { klub: org.name, total: 0 };
+    sortedKeys.forEach(key => {
+      const amt = org.funding[key] || 0;
+      if (amt) row[key] = amt;
+      row.total += amt;
+    });
+    ws.addRow(row);
+  });
+
+  // Style header row
+  const headerRow = ws.getRow(1);
+  headerRow.font = { bold: true, color: { argb: 'FFFFFFFF' }, size: 11 };
+  headerRow.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF2C5F8A' } };
+  headerRow.alignment = { horizontal: 'center', vertical: 'middle' };
+  headerRow.height = 28;
+
+  // Style data rows and format numbers
+  const dkkFormat = '#,##0 "kr."';
+  for (let r = 2; r <= data.length + 1; r++) {
+    const row = ws.getRow(r);
+    row.alignment = { vertical: 'middle' };
+    row.height = 22;
+
+    // Zebra striping
+    if (r % 2 === 0) {
+      row.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFF2F6FA' } };
+    }
+
+    // Format amount cells
+    for (let c = 2; c <= sortedKeys.length + 2; c++) {
+      const cell = row.getCell(c);
+      if (cell.value) cell.numFmt = dkkFormat;
+    }
+
+    // Bold the total column
+    row.getCell(sortedKeys.length + 2).font = { bold: true };
+  }
+
+  // Borders for all cells
+  const lastCol = sortedKeys.length + 2;
+  const lastRow = data.length + 1;
+  const thinBorder = { style: 'thin', color: { argb: 'FFD0D0D0' } };
+  for (let r = 1; r <= lastRow; r++) {
+    for (let c = 1; c <= lastCol; c++) {
+      ws.getRow(r).getCell(c).border = {
+        top: thinBorder, left: thinBorder, bottom: thinBorder, right: thinBorder
+      };
+    }
+  }
+
+  // Auto-filter on header
+  ws.autoFilter = { from: { row: 1, column: 1 }, to: { row: 1, column: lastCol } };
+
+  // Freeze top row
+  ws.views = [{ state: 'frozen', ySplit: 1 }];
+
+  // Download
+  const buf = await wb.xlsx.writeBuffer();
+  saveAs(new Blob([buf], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }), 'seniorklubber.xlsx');
+  showToast('Excel-fil downloadet', 'success');
+}
+
 // ── Init ──────────────────────────────────────────────────────────
 
 (async function init() {
@@ -384,6 +468,9 @@ function showToast(msg, type = '') {
   document.getElementById('club-search').addEventListener('input', (e) => {
     renderClubList(e.target.value);
   });
+
+  // Export to Excel
+  document.getElementById('export-excel-btn').addEventListener('click', exportToExcel);
 
   // Add club button
   document.getElementById('add-club-btn').addEventListener('click', showAddClubForm);

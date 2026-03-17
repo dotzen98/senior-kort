@@ -13,6 +13,7 @@
     <h1>Administrer Seniorklubber</h1>
     <div id="header-actions">
       <span id="save-status"></span>
+      <button id="export-excel-btn" class="btn btn-secondary">Eksportér til Excel</button>
       <a href="index.html" class="btn btn-secondary">← Vis kort</a>
     </div>
   </header>
@@ -126,6 +127,8 @@
   <div id="toast"></div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <script src="js/supabase-config.js"></script>
   <script src="js/admin.js"></script>
