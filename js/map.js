@@ -132,14 +132,6 @@
     legendItems.appendChild(row);
   });
 
-  // Note about missing orgs
-  const totalInXlsx = 103;
-  const totalOnMap = data.length;
-  if (totalInXlsx > totalOnMap) {
-    document.getElementById('missing-note').textContent =
-      `${totalInXlsx - totalOnMap} klubber uden koordinater er ikke vist på kortet.`;
-  }
-
   // ========== FILTER LOGIC ==========
   function getActiveColumns() {
     const activePrograms = new Set();
