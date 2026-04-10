@@ -1,35 +1,15 @@
-(function () {
-  const SESSION_KEY = 'auth';
-  const LOGIN_PAGE  = 'login.html';
-
-  function checkAuth() {
-    const session = sessionStorage.getItem(SESSION_KEY);
-    if (!session) {
-      window.location.replace(LOGIN_PAGE);
-      return;
-    }
-    document.documentElement.style.visibility = '';
+window.auth = {
+  logout: async function () {
+    await sb.auth.signOut();
+    window.location.replace('login.html');
   }
+};
 
-  function getSession() {
-    try { return JSON.parse(sessionStorage.getItem(SESSION_KEY)); }
-    catch { return null; }
+(async function () {
+  const { data: { session } } = await sb.auth.getSession();
+  if (!session) {
+    window.location.replace('login.html');
+    return;
   }
-
-  function setSession(username) {
-    sessionStorage.setItem(SESSION_KEY, JSON.stringify({ loggedIn: true, username: username }));
-  }
-
-  function clearSession() {
-    sessionStorage.removeItem(SESSION_KEY);
-  }
-
-  function logout() {
-    clearSession();
-    window.location.replace(LOGIN_PAGE);
-  }
-
-  window.auth = { checkAuth: checkAuth, getSession: getSession, setSession: setSession, clearSession: clearSession, logout: logout };
-
-  checkAuth();
+  document.documentElement.style.visibility = '';
 })();

@@ -14,14 +14,14 @@
 
     <form id="login-form" autocomplete="on">
       <label class="login-label">
-        Brugernavn
-        <input type="text" id="username" name="username" autocomplete="username" autofocus />
+        E-mail
+        <input type="email" id="email" name="email" autocomplete="email" autofocus />
       </label>
       <label class="login-label">
         Adgangskode
         <input type="password" id="password" name="password" autocomplete="current-password" />
       </label>
-      <p id="login-error" class="login-error hidden">Forkert brugernavn eller adgangskode.</p>
+      <p id="login-error" class="login-error hidden">Forkert e-mail eller adgangskode.</p>
       <button type="submit" id="login-btn" class="btn btn-primary login-submit">Log ind</button>
     </form>
   </div>
@@ -30,46 +30,32 @@
   <script src="js/config.js"></script>
   <script src="js/supabase-config.js"></script>
   <script>
-    var SESSION_KEY = 'auth';
-
-    // If already logged in, skip straight to the app
-    (function () {
-      if (sessionStorage.getItem(SESSION_KEY)) {
-        window.location.replace('index.html');
-      }
+    (async function () {
+      const { data: { session } } = await sb.auth.getSession();
+      if (session) window.location.replace('index.html');
     })();
 
     document.getElementById('login-form').addEventListener('submit', async function (e) {
       e.preventDefault();
-      var btn     = document.getElementById('login-btn');
-      var errorEl = document.getElementById('login-error');
-      var username = document.getElementById('username').value.trim();
-      var password = document.getElementById('password').value;
+      const btn     = document.getElementById('login-btn');
+      const errorEl = document.getElementById('login-error');
+      const email    = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
 
       errorEl.classList.add('hidden');
-      errorEl.textContent = 'Forkert brugernavn eller adgangskode.';
       btn.disabled = true;
       btn.textContent = 'Logger ind…';
 
-      try {
-        var result = await sb.rpc('verify_user', { p_username: username, p_password: password });
-        if (result.error) throw result.error;
+      const { error } = await sb.auth.signInWithPassword({ email, password });
 
-        if (result.data) {
-          sessionStorage.setItem(SESSION_KEY, JSON.stringify({ loggedIn: true, username: result.data }));
-          window.location.replace('index.html');
-        } else {
-          errorEl.classList.remove('hidden');
-          btn.disabled = false;
-          btn.textContent = 'Log ind';
-          document.getElementById('password').value = '';
-          document.getElementById('password').focus();
-        }
-      } catch (err) {
-        errorEl.textContent = 'Teknisk fejl – prøv igen.';
+      if (error) {
         errorEl.classList.remove('hidden');
         btn.disabled = false;
         btn.textContent = 'Log ind';
+        document.getElementById('password').value = '';
+        document.getElementById('password').focus();
+      } else {
+        window.location.replace('index.html');
       }
     });
   </script>
