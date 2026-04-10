@@ -11,5 +11,5 @@ window.auth = {
     window.location.replace('login.html');
     return;
   }
-  document.documentElement.style.visibility = '';
+  document.documentElement.style.visibility = 'visible';
 })();
