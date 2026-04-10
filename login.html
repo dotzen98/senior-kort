@@ -14,14 +14,14 @@
 
     <form id="login-form" autocomplete="on">
       <label class="login-label">
-        E-mail
-        <input type="email" id="email" name="email" autocomplete="email" autofocus />
+        Brugernavn
+        <input type="text" id="username" name="username" autocomplete="username" autofocus />
       </label>
       <label class="login-label">
         Adgangskode
         <input type="password" id="password" name="password" autocomplete="current-password" />
       </label>
-      <p id="login-error" class="login-error hidden">Forkert e-mail eller adgangskode.</p>
+      <p id="login-error" class="login-error hidden">Forkert brugernavn eller adgangskode.</p>
       <button type="submit" id="login-btn" class="btn btn-primary login-submit">Log ind</button>
     </form>
   </div>
@@ -39,8 +39,9 @@
       e.preventDefault();
       const btn     = document.getElementById('login-btn');
       const errorEl = document.getElementById('login-error');
-      const email    = document.getElementById('email').value.trim();
+      const username = document.getElementById('username').value.trim();
       const password = document.getElementById('password').value;
+      const email    = username + '@admin.local';
 
       errorEl.classList.add('hidden');
       btn.disabled = true;
@@ -53,7 +54,7 @@
         btn.disabled = false;
         btn.textContent = 'Log ind';
         document.getElementById('password').value = '';
-        document.getElementById('password').focus();
+        document.getElementById('username').focus();
       } else {
         window.location.replace('index.html');
       }
