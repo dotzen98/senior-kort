@@ -1,8 +1,6 @@
-// Supabase client configuration
-const SUPABASE_URL = 'https://mwciztootisebhgunpuc.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im13Y2l6dG9vdGlzZWJoZ3VucHVjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3NTY5NTEsImV4cCI6MjA4OTMzMjk1MX0.iZE1a1_N3AfE1x01yWgX0DI394our3EUJ87Xy7ksUtM';
-
-const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// Credentials are loaded from js/config.js (gitignored).
+// See js/config.example.js for the required variables.
+const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
 
 /**
  * Load all clubs with funding, returned in the flat format:

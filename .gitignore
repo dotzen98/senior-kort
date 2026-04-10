@@ -39,6 +39,7 @@ Thumbs.db
 # Project specific
 *.xlsx
 convert_data.py
+js/config.js
 
 .claude/
 CLAUDE.md
