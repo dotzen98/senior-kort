@@ -41,7 +41,7 @@
       const errorEl = document.getElementById('login-error');
       const username = document.getElementById('username').value.trim();
       const password = document.getElementById('password').value;
-      const email    = username + '@admin.local';
+      const email    = username.includes('@') ? username : username + '@admin.local';
 
       errorEl.classList.add('hidden');
       btn.disabled = true;
