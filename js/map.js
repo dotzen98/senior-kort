@@ -188,7 +188,7 @@
     });
 
     document.getElementById('stats').textContent =
-      `Viser ${visibleCount} af ${markers.length} klubber`;
+      `Viser ${visibleCount} af ${markers.length} tilskudsmodtagere`;
   }
 
   // Wire up filter events
@@ -198,6 +198,15 @@
   });
   document.getElementById('min-amount').addEventListener('input', applyFilters);
   document.getElementById('max-amount').addEventListener('input', applyFilters);
+
+  // "Alle" / "Ingen" toggles for the Puljer and År checkbox groups
+  document.querySelectorAll('.select-links button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const checked = btn.dataset.check === 'true';
+      document.querySelectorAll(`#${btn.dataset.target} input`).forEach(cb => { cb.checked = checked; });
+      applyFilters();
+    });
+  });
 
   document.getElementById('reset-btn').addEventListener('click', () => {
     document.getElementById('search-box').value = '';
@@ -215,6 +224,7 @@
   // ========== DETAIL PANEL ==========
   function showDetail(org) {
     document.getElementById('detail-name').textContent = org.name;
+    document.getElementById('detail-admin-link').href = `admin.html?club=${encodeURIComponent(org.id)}`;
 
     const activeCols = getActiveColumns();
     const filteredTotal = getFilteredTotal(org, activeCols);

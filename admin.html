@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Administrer Seniorklubber</title>
+  <title>Administrer tilskudsmodtagere</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="css/admin.css" />
   <style>html { visibility: hidden; }</style>
@@ -11,9 +11,14 @@
 <body>
 
   <header id="header">
-    <h1>Administrer Seniorklubber</h1>
+    <h1>Administrer tilskudsmodtagere</h1>
     <div id="header-actions">
       <span id="save-status"></span>
+      <div id="view-toggle">
+        <button id="view-list-btn" class="btn btn-sm on" type="button">Liste</button>
+        <button id="view-sheet-btn" class="btn btn-sm" type="button">Regneark</button>
+      </div>
+      <button id="programs-btn" class="btn btn-secondary" type="button">Puljer</button>
       <button id="export-excel-btn" class="btn btn-secondary">Eksportér til Excel</button>
       <a href="index.html" class="btn btn-secondary">← Vis kort</a>
       <button onclick="auth.logout()" class="btn btn-danger">Log ud</button>
@@ -25,8 +30,8 @@
     <!-- LEFT: Club list -->
     <div id="club-list-panel">
       <div id="club-list-header">
-        <input type="text" id="club-search" placeholder="Søg klub..." />
-        <button id="add-club-btn" class="btn btn-primary btn-sm">+ Ny klub</button>
+        <input type="text" id="club-search" placeholder="Søg tilskudsmodtager..." />
+        <button id="add-club-btn" class="btn btn-primary btn-sm" title="Ny tilskudsmodtager">+ Ny</button>
       </div>
       <ul id="club-list"></ul>
     </div>
@@ -36,7 +41,7 @@
 
       <!-- Empty state -->
       <div id="empty-state">
-        <p>Vælg en klub fra listen, eller opret en ny.</p>
+        <p>Vælg en tilskudsmodtager fra listen, eller opret en ny.</p>
       </div>
 
       <!-- Club editor (shown when club is selected) -->
@@ -54,9 +59,17 @@
               <input type="number" id="edit-lng" step="any" />
             </label>
           </div>
+          <div class="address-search">
+            <span class="field-label">Find koordinater fra adresse</span>
+            <div class="address-row">
+              <input type="text" id="edit-address" placeholder="f.eks. Nørrebrogade 10, København" />
+              <button id="edit-address-btn" class="btn btn-secondary btn-sm" type="button">Find</button>
+            </div>
+            <ul id="edit-address-results" class="geo-results hidden"></ul>
+          </div>
           <div class="editor-actions">
             <button id="save-details-btn" class="btn btn-primary btn-sm">Gem detaljer</button>
-            <button id="delete-club-btn" class="btn btn-danger btn-sm">Slet klub</button>
+            <button id="delete-club-btn" class="btn btn-danger btn-sm">Slet tilskudsmodtager</button>
           </div>
         </div>
 
@@ -101,13 +114,21 @@
       <!-- Add club form (shown when "+ Ny klub" clicked) -->
       <div id="add-club-form" class="hidden">
         <div class="editor-section">
-          <h2>Ny klub</h2>
+          <h2>Ny tilskudsmodtager</h2>
           <div class="form-grid">
             <label>Navn
-              <input type="text" id="new-club-name" placeholder="Klubbens navn" />
+              <input type="text" id="new-club-name" placeholder="Tilskudsmodtagerens navn" />
             </label>
           </div>
-          <p class="map-instructions">Klik på kortet for at vælge placering:</p>
+          <div class="address-search">
+            <span class="field-label">Adresse</span>
+            <div class="address-row">
+              <input type="text" id="new-address" placeholder="f.eks. Nørrebrogade 10, København" />
+              <button id="new-address-btn" class="btn btn-secondary btn-sm" type="button">Find</button>
+            </div>
+            <ul id="new-address-results" class="geo-results hidden"></ul>
+          </div>
+          <p class="map-instructions">…eller klik på kortet for at vælge placering:</p>
           <div id="location-map"></div>
           <div class="coords-display">
             <span>Lat: <strong id="new-lat-display">—</strong></span>
@@ -116,7 +137,7 @@
           <input type="hidden" id="new-lat" />
           <input type="hidden" id="new-lng" />
           <div class="editor-actions">
-            <button id="confirm-add-club-btn" class="btn btn-primary btn-sm">Opret klub</button>
+            <button id="confirm-add-club-btn" class="btn btn-primary btn-sm">Opret tilskudsmodtager</button>
             <button id="cancel-add-club-btn" class="btn btn-secondary btn-sm">Annuller</button>
           </div>
         </div>
@@ -124,6 +145,38 @@
 
     </div>
   </div>
+
+  <!-- Spreadsheet view (toggled via "Regneark") -->
+  <div id="sheet-view" class="hidden">
+    <div id="sheet-toolbar">
+      <input type="text" id="sheet-search" placeholder="Søg tilskudsmodtager..." />
+      <button id="sheet-add-row-btn" class="btn btn-primary btn-sm" type="button">+ Ny række</button>
+      <button id="sheet-add-col-btn" class="btn btn-secondary btn-sm" type="button">+ Ny kolonne</button>
+      <span id="sheet-hint">Piletaster flytter · Enter redigerer · Esc fortryder · Ctrl+V indsætter fra Excel</span>
+    </div>
+    <div id="sheet-wrap" tabindex="0">
+      <table id="sheet">
+        <thead></thead>
+        <tbody></tbody>
+        <tfoot></tfoot>
+      </table>
+    </div>
+  </div>
+
+  <!-- Puljer dialog: rename a pulje across all recipients -->
+  <dialog id="programs-dialog">
+    <div class="dialog-head">
+      <h2>Puljer</h2>
+      <button type="button" id="programs-close" class="dialog-close" aria-label="Luk">&times;</button>
+    </div>
+    <p class="dialog-hint">Ændringer gælder for alle tilskudsmodtagere på én gang.</p>
+    <ul id="programs-list"></ul>
+    <form id="program-add-form">
+      <input type="text" id="program-add-input" placeholder="Ny pulje…" />
+      <button type="submit" class="btn btn-secondary btn-sm">+ Tilføj</button>
+    </form>
+    <p id="programs-msg"></p>
+  </dialog>
 
   <!-- Toast notification -->
   <div id="toast"></div>
@@ -136,5 +189,6 @@
   <script src="js/supabase-config.js"></script>
   <script src="js/auth.js"></script>
   <script src="js/admin.js"></script>
+  <script src="js/sheet.js"></script>
 </body>
 </html>
